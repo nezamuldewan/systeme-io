@@ -1,0 +1,739 @@
+
+<style>
+/* ===== NEZAMUL DEWAN | HERO SECTION ===== */
+.nd-hero, .nd-hero * {
+  box-sizing: border-box;
+}
+
+.nd-hero {
+  --nd-blue: #075985;
+  --nd-deep: #063b60;
+  --nd-orange: #ffab22;
+  --nd-ink: #102a43;
+  font-family: Inter, -apple-system, BlinkMacSystemFont,
+               "Segoe UI", Arial, sans-serif;
+  position: relative;
+  isolation: isolate;
+  overflow: hidden;
+  color: #fff;
+  background:
+    radial-gradient(ellipse at 82% 25%, #0876a6 0%, transparent 38%),
+    radial-gradient(ellipse at 5% 100%, #126b92 0%, transparent 40%),
+    linear-gradient(120deg, #063b60, #075985 58%, #06476e);
+  padding: 24px 22px 76px;
+}
+
+.nd-hero::before,
+.nd-hero::after {
+  content: "";
+  position: absolute;
+  pointer-events: none;
+  z-index: -1;
+  border: 1px solid rgba(255,255,255,.09);
+  transform: rotate(-28deg);
+}
+
+.nd-hero::before {
+  width: 450px;
+  height: 650px;
+  right: -100px;
+  top: -250px;
+  border-radius: 45%;
+}
+
+.nd-hero::after {
+  width: 300px;
+  height: 500px;
+  left: -200px;
+  bottom: -350px;
+  border-radius: 45%;
+}
+
+.nd-container {
+  max-width: 1120px;
+  margin: 0 auto;
+}
+
+/* Navigation */
+.nd-nav {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 24px;
+  margin-bottom: 65px;
+}
+
+.nd-brand {
+  font-size: 13px;
+  font-weight: 850;
+  letter-spacing: 1.1px;
+  color: #fff;
+  text-decoration: none;
+  white-space: nowrap;
+}
+
+.nd-brand span {
+  color: var(--nd-orange);
+}
+
+.nd-nav-links {
+  display: flex;
+  align-items: center;
+  gap: 25px;
+}
+
+.nd-nav-links a {
+  color: rgba(255,255,255,.84);
+  font-size: 12px;
+  text-decoration: none;
+  transition: color .2s;
+}
+
+.nd-nav-links a:hover {
+  color: var(--nd-orange);
+}
+
+.nd-nav-links .nd-nav-cta {
+  color: #182b3b;
+  background: var(--nd-orange);
+  padding: 12px 17px;
+  border-radius: 7px;
+  font-weight: 750;
+}
+
+/* Hero layout */
+.nd-hero-grid {
+  display: grid;
+  grid-template-columns: 1.04fr .96fr;
+  align-items: center;
+  gap: 55px;
+}
+
+.nd-eyebrow {
+  display: inline-flex;
+  align-items: center;
+  gap: 9px;
+  color: #d8efff;
+  background: rgba(255,255,255,.08);
+  border: 1px solid rgba(255,255,255,.15);
+  padding: 9px 13px;
+  border-radius: 30px;
+  font-size: 11px;
+  font-weight: 650;
+  letter-spacing: .35px;
+  margin-bottom: 23px;
+}
+
+.nd-status-dot {
+  width: 7px;
+  height: 7px;
+  background: #5ce1a1;
+  border-radius: 50%;
+  box-shadow: 0 0 12px #5ce1a1;
+}
+
+.nd-hero h1 {
+  margin: 0 0 21px;
+  max-width: 590px;
+  color: #fff;
+  font-size: clamp(36px, 4.4vw, 61px);
+  line-height: 1.09;
+  letter-spacing: -2px;
+  font-weight: 850;
+}
+
+.nd-hero h1 .nd-highlight {
+  color: var(--nd-orange);
+}
+
+.nd-hero-copy {
+  max-width: 490px;
+  margin: 0 0 28px;
+  color: #d9eaf5;
+  font-size: 15px;
+  line-height: 1.85;
+}
+
+.nd-hero-actions {
+  display: flex;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 12px;
+  margin-bottom: 30px;
+}
+
+.nd-btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 9px;
+  min-height: 48px;
+  padding: 0 19px;
+  border-radius: 7px;
+  font-size: 12px;
+  font-weight: 750;
+  text-decoration: none;
+  transition: transform .2s, box-shadow .2s, background .2s;
+}
+
+.nd-btn:hover {
+  transform: translateY(-3px);
+}
+
+.nd-btn-primary {
+  background: var(--nd-orange);
+  color: #142b3b;
+  box-shadow: 0 8px 24px rgba(255,171,34,.2);
+}
+
+.nd-btn-primary:hover {
+  background: #ffc15a;
+  box-shadow: 0 12px 28px rgba(255,171,34,.28);
+}
+
+.nd-btn-secondary {
+  color: #fff;
+  border: 1px solid rgba(255,255,255,.38);
+  background: rgba(255,255,255,.04);
+}
+
+.nd-btn-secondary:hover {
+  background: rgba(255,255,255,.12);
+}
+
+.nd-arrow {
+  font-size: 16px;
+  line-height: 1;
+}
+
+.nd-trust {
+  display: flex;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 12px 19px;
+  color: #e0eff8;
+  font-size: 11px;
+}
+
+.nd-trust-item {
+  display: inline-flex;
+  align-items: center;
+  gap: 7px;
+}
+
+.nd-trust-check {
+  display: inline-grid;
+  place-items: center;
+  width: 17px;
+  height: 17px;
+  border-radius: 50%;
+  color: #a7f3d0;
+  background: rgba(92,225,161,.14);
+  font-size: 10px;
+}
+
+/* Analytics illustration */
+.nd-visual {
+  min-width: 0;
+  position: relative;
+  padding: 24px 4px 34px;
+}
+
+.nd-orbit {
+  position: absolute;
+  width: 330px;
+  height: 330px;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%,-50%);
+  border: 1px solid rgba(255,255,255,.1);
+  border-radius: 50%;
+  pointer-events: none;
+}
+
+.nd-orbit::before,
+.nd-orbit::after {
+  content: "";
+  position: absolute;
+  border: 1px solid rgba(255,255,255,.07);
+  border-radius: 50%;
+}
+
+.nd-orbit::before { inset: 25px; }
+.nd-orbit::after { inset: -24px; }
+
+.nd-dashboard {
+  position: relative;
+  z-index: 1;
+  padding: 21px;
+  border: 1px solid rgba(255,255,255,.65);
+  border-radius: 15px;
+  background: linear-gradient(145deg, #fff, #f0f7fc);
+  color: var(--nd-ink);
+  box-shadow: 0 28px 70px rgba(0,20,40,.28);
+  transform: perspective(1000px) rotateY(-5deg) rotateX(2deg);
+  animation: nd-float 5s ease-in-out infinite;
+}
+
+.nd-dash-top {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 12px;
+  margin-bottom: 22px;
+}
+
+.nd-dash-label {
+  font-size: 10px;
+  color: #61758a;
+  margin-bottom: 6px;
+}
+
+.nd-dash-title {
+  color: #102a43;
+  font-size: 16px;
+  font-weight: 800;
+}
+
+.nd-dash-badge {
+  background: #dcfce7;
+  color: #167346;
+  padding: 7px 9px;
+  border-radius: 20px;
+  font-size: 10px;
+  font-weight: 750;
+  white-space: nowrap;
+}
+
+.nd-chart {
+  position: relative;
+  overflow: hidden;
+  height: 155px;
+  border-radius: 9px;
+  background:
+    repeating-linear-gradient(
+      to bottom,
+      transparent 0,
+      transparent 37px,
+      #e7eef5 38px,
+      transparent 39px
+    );
+}
+
+.nd-chart svg {
+  display: block;
+  width: 100%;
+  height: 100%;
+  overflow: visible;
+}
+
+.nd-chart-line {
+  stroke-dasharray: 600;
+  stroke-dashoffset: 600;
+  animation: nd-draw 2s ease forwards .3s;
+}
+
+.nd-stats {
+  display: grid;
+  grid-template-columns: repeat(2,minmax(0,1fr));
+  gap: 12px;
+  margin-top: 17px;
+}
+
+.nd-stat {
+  background: #fff;
+  border: 1px solid #e4edf5;
+  border-radius: 9px;
+  padding: 13px;
+}
+
+.nd-stat-label {
+  color: #728397;
+  font-size: 10px;
+  margin-bottom: 7px;
+}
+
+.nd-stat-value {
+  color: #102a43;
+  font-size: 21px;
+  font-weight: 850;
+  letter-spacing: -.5px;
+}
+
+.nd-stat-note {
+  color: #148457;
+  font-size: 10px;
+  margin-top: 5px;
+}
+
+.nd-floating-card {
+  position: absolute;
+  z-index: 2;
+  display: flex;
+  align-items: center;
+  gap: 11px;
+  padding: 13px 15px;
+  border: 1px solid rgba(255,255,255,.7);
+  border-radius: 12px;
+  background: #fff;
+  color: #102a43;
+  box-shadow: 0 14px 35px rgba(0,20,40,.18);
+  animation: nd-float 4s ease-in-out infinite;
+}
+
+.nd-floating-card.nd-card-top {
+  top: 1px;
+  right: -12px;
+}
+
+.nd-floating-card.nd-card-bottom {
+  bottom: 2px;
+  left: -22px;
+  animation-delay: -2s;
+}
+
+.nd-float-icon {
+  display: grid;
+  place-items: center;
+  width: 36px;
+  height: 36px;
+  border-radius: 9px;
+  background: #e0f2fe;
+  font-size: 19px;
+}
+
+.nd-float-title {
+  font-size: 11px;
+  font-weight: 800;
+}
+
+.nd-float-sub {
+  color: #718096;
+  font-size: 10px;
+  margin-top: 4px;
+}
+
+/* Bottom trust strip */
+.nd-proof-strip {
+  position: relative;
+  z-index: 2;
+  max-width: 1120px;
+  margin: 64px auto -102px;
+  display: grid;
+  grid-template-columns: repeat(4,minmax(0,1fr));
+  background: #fff;
+  color: #102a43;
+  border: 1px solid #e7edf3;
+  border-radius: 12px;
+  box-shadow: 0 12px 38px rgba(4,39,64,.1);
+}
+
+.nd-proof {
+  text-align: center;
+  padding: 20px 12px;
+  border-right: 1px solid #e9eff5;
+}
+
+.nd-proof:last-child { border-right: 0; }
+
+.nd-proof strong {
+  display: block;
+  font-size: 18px;
+  font-weight: 850;
+  margin-bottom: 6px;
+}
+
+.nd-proof span {
+  color: #718096;
+  font-size: 10px;
+}
+
+/* Entrance animation */
+.nd-reveal {
+  animation: nd-reveal .8s ease both;
+}
+
+.nd-reveal-delay { animation-delay: .15s; }
+
+@keyframes nd-reveal {
+  from { opacity: 0; transform: translateY(18px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+@keyframes nd-float {
+  0%,100% { translate: 0 0; }
+  50% { translate: 0 -8px; }
+}
+
+@keyframes nd-draw {
+  to { stroke-dashoffset: 0; }
+}
+
+/* Responsive */
+@media (min-width: 1400px) {
+  .nd-hero { padding-top: 28px; }
+  .nd-nav { margin-bottom: 78px; }
+}
+
+@media (max-width: 850px) {
+  .nd-nav { margin-bottom: 48px; }
+  .nd-nav-links { gap: 15px; }
+  .nd-hero-grid { gap: 30px; }
+  .nd-hero h1 { font-size: clamp(35px,5.4vw,48px); }
+  .nd-dashboard { padding: 16px; }
+  .nd-floating-card.nd-card-top { right: -5px; }
+  .nd-floating-card.nd-card-bottom { left: -8px; }
+}
+
+@media (max-width: 640px) {
+  .nd-hero { padding: 20px 18px 45px; }
+  .nd-nav { margin-bottom: 42px; }
+  .nd-brand { font-size: 12px; }
+  .nd-nav-links a:not(.nd-nav-cta) { display: none; }
+  .nd-nav-links .nd-nav-cta { padding: 10px 12px; font-size: 11px; }
+  .nd-hero-grid {
+    grid-template-columns: 1fr;
+    gap: 22px;
+  }
+  .nd-hero h1 {
+    font-size: clamp(37px,10vw,51px);
+    letter-spacing: -1.6px;
+  }
+  .nd-hero-copy { font-size: 14px; }
+  .nd-hero-actions { align-items: stretch; }
+  .nd-btn { flex: 1 1 150px; padding: 0 12px; }
+  .nd-trust { gap: 10px 13px; }
+  .nd-visual { margin: 4px 8px 0; padding: 22px 0 29px; }
+  .nd-orbit { width: 250px; height: 250px; }
+  .nd-dashboard { transform: none; animation: none; }
+  .nd-chart { height: 135px; }
+  .nd-floating-card.nd-card-top { right: -8px; top: 4px; }
+  .nd-floating-card.nd-card-bottom { left: -8px; bottom: 0; }
+  .nd-proof-strip {
+    margin: 38px auto -68px;
+    grid-template-columns: repeat(2,minmax(0,1fr));
+  }
+  .nd-proof { padding: 15px 8px; }
+  .nd-proof:nth-child(2) { border-right: 0; }
+  .nd-proof:nth-child(-n+2) { border-bottom: 1px solid #e9eff5; }
+  .nd-proof strong { font-size: 17px; }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .nd-hero *,
+  .nd-hero *::before,
+  .nd-hero *::after {
+    animation: none !important;
+    transition: none !important;
+    scroll-behavior: auto !important;
+  }
+}
+</style>
+
+<section class="nd-hero" id="nd-home">
+  <div class="nd-container">
+
+    <!-- Navigation -->
+    <nav class="nd-nav" aria-label="Main navigation">
+      <a class="nd-brand" href="#nd-home">
+        NEZAMUL <span>DEWAN</span>
+      </a>
+
+      <div class="nd-nav-links">
+        <a href="#nd-home">Home</a>
+        <a href="#nd-about">About</a>
+        <a href="#nd-services">Services</a>
+        <a href="#nd-case-studies">Case Studies</a>
+        <a class="nd-nav-cta" href="#nd-contact">
+          Let's Talk ↗
+        </a>
+      </div>
+    </nav>
+
+    <!-- Hero content -->
+    <div class="nd-hero-grid">
+
+      <div class="nd-hero-content nd-reveal">
+        <div class="nd-eyebrow">
+          <span class="nd-status-dot"></span>
+          PAID ADS · ANALYTICS · CONVERSION TRACKING
+        </div>
+
+        <h1>
+          Stop Guessing.<br>
+          <span class="nd-highlight">Start Growing</span><br>
+          with Data-Driven Marketing.
+        </h1>
+
+        <p class="nd-hero-copy">
+          I help eCommerce brands and growing businesses improve
+          advertising performance with Google Ads, Meta Ads, and
+          accurate conversion tracking.
+        </p>
+
+        <div class="nd-hero-actions">
+          <!-- Replace with your actual booking URL -->
+          <a class="nd-btn nd-btn-primary"
+             href="#nd-contact">
+            Book a Free Strategy Call
+            <span class="nd-arrow">↗</span>
+          </a>
+
+          <a class="nd-btn nd-btn-secondary"
+             href="#nd-case-studies">
+            View Case Studies
+            <span class="nd-arrow">→</span>
+          </a>
+        </div>
+
+        <div class="nd-trust">
+          <span class="nd-trust-item">
+            <span class="nd-trust-check">✓</span>
+            Google Ads
+          </span>
+          <span class="nd-trust-item">
+            <span class="nd-trust-check">✓</span>
+            Meta Ads
+          </span>
+          <span class="nd-trust-item">
+            <span class="nd-trust-check">✓</span>
+            GA4 & GTM
+          </span>
+          <span class="nd-trust-item">
+            <span class="nd-trust-check">✓</span>
+            Meta CAPI
+          </span>
+        </div>
+      </div>
+
+      <!-- Animated analytics dashboard -->
+      <div class="nd-visual nd-reveal nd-reveal-delay"
+           aria-label="Illustrative marketing analytics dashboard">
+
+        <div class="nd-orbit"></div>
+
+        <div class="nd-floating-card nd-card-top">
+          <div class="nd-float-icon">📈</div>
+          <div>
+            <div class="nd-float-title">Performance Insights</div>
+            <div class="nd-float-sub">Data-driven decisions</div>
+          </div>
+        </div>
+
+        <div class="nd-dashboard">
+          <div class="nd-dash-top">
+            <div>
+              <div class="nd-dash-label">MARKETING ANALYTICS</div>
+              <div class="nd-dash-title">Campaign Overview</div>
+            </div>
+            <span class="nd-dash-badge">Live Preview</span>
+          </div>
+
+          <div class="nd-chart">
+            <svg viewBox="0 0 400 155"
+                 preserveAspectRatio="none"
+                 role="img"
+                 aria-label="Illustrative campaign performance trend">
+              <defs>
+                <linearGradient id="ndChartFill"
+                  x1="0" y1="0" x2="0" y2="1">
+                  <stop offset="0%" stop-color="#0ea5e9"
+                        stop-opacity=".25"/>
+                  <stop offset="100%" stop-color="#0ea5e9"
+                        stop-opacity="0"/>
+                </linearGradient>
+              </defs>
+
+              <path d="M0 130 L45 115 L90 121 L135 82
+                       L180 96 L225 56 L270 72 L315 35
+                       L360 46 L400 12 L400 155 L0 155 Z"
+                    fill="url(#ndChartFill)"/>
+
+              <path class="nd-chart-line"
+                    d="M0 130 L45 115 L90 121 L135 82
+                       L180 96 L225 56 L270 72 L315 35
+                       L360 46 L400 12"
+                    fill="none"
+                    stroke="#0784c3"
+                    stroke-width="4"
+                    stroke-linecap="round"
+                    stroke-linejoin="round"/>
+
+              <circle cx="225" cy="56" r="5" fill="#ffab22"/>
+              <circle cx="400" cy="12" r="6" fill="#ffab22"/>
+            </svg>
+          </div>
+
+          <div class="nd-stats">
+            <div class="nd-stat">
+              <div class="nd-stat-label">Campaign Performance</div>
+              <div class="nd-stat-value">Track</div>
+              <div class="nd-stat-note">Measure what matters</div>
+            </div>
+            <div class="nd-stat">
+              <div class="nd-stat-label">Conversion Tracking</div>
+              <div class="nd-stat-value">Optimize</div>
+              <div class="nd-stat-note">Make data actionable</div>
+            </div>
+          </div>
+        </div>
+
+        <div class="nd-floating-card nd-card-bottom">
+          <div class="nd-float-icon">🎯</div>
+          <div>
+            <div class="nd-float-title">Better Decisions</div>
+            <div class="nd-float-sub">Powered by accurate data</div>
+          </div>
+        </div>
+
+      </div>
+    </div>
+
+    <!-- Trust indicators: customize with verified facts -->
+    <div class="nd-proof-strip">
+      <div class="nd-proof">
+        <strong>Google Ads</strong>
+        <span>Campaign Strategy</span>
+      </div>
+      <div class="nd-proof">
+        <strong>Meta Ads</strong>
+        <span>Paid Social Campaigns</span>
+      </div>
+      <div class="nd-proof">
+        <strong>GA4 + GTM</strong>
+        <span>Analytics & Tracking</span>
+      </div>
+      <div class="nd-proof">
+        <strong>Meta CAPI</strong>
+        <span>Server-Side Tracking</span>
+      </div>
+    </div>
+
+  </div>
+</section>
+
+<script>
+(function () {
+  const hero = document.querySelector(".nd-hero");
+  if (!hero) return;
+
+  // Smooth scrolling for links within this hero.
+  hero.querySelectorAll('a[href^="#"]').forEach(function (link) {
+    link.addEventListener("click", function (event) {
+      const targetId = link.getAttribute("href");
+      if (!targetId || targetId === "#") return;
+
+      const target = document.querySelector(targetId);
+      if (target) {
+        event.preventDefault();
+        target.scrollIntoView({
+          behavior: window.matchMedia(
+            "(prefers-reduced-motion: reduce)"
+          ).matches ? "auto" : "smooth",
+          block: "start"
+        });
+      }
+    });
+  });
+})();
+</script>
